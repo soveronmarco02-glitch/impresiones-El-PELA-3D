@@ -18,7 +18,8 @@ body {
 
 /* Contenedor para hacer el contenido legible sobre el fondo */
 .content-wrapper {
-   background-color: rgba(255, 255, 255, 0.95); 
+    /* Fondo semitransparente blanco para legibilidad */
+    background-color: rgba(255, 255, 255, 0.95); 
     max-width: 900px;
     margin: 40px auto;
     padding: 30px;
@@ -113,4 +114,4 @@ hr {
 }
 .contact-links a:hover {
     color: #1e7e34;
-}  /* Fondo semitransparente blanco para legibilidad */
+}
