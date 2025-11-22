@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chops y Vasos Ferneteros - pela3D</title>
+    <link rel="stylesheet" href="styles.css"> 
+    
+    <style>
+        /* Estilos ESPECÍFICOS para la página de Chops (Letras Blancas, Fondo Transparente) */
+        body {
+            color: #ffffff; 
+        }
+
+        .content-wrapper {
+            background-color: transparent; 
+            box-shadow: none;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .intro-text, .texto-general {
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .back-link {
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        /* ----- CAMBIOS PARA LAS TARJETAS DE PRODUCTO EN CHOP ----- */
+        .galeria-contenedor {
+            display: flex; /* Habilitar flexbox para poner elementos uno al lado del otro */
+            flex-wrap: wrap; /* Permitir que los elementos salten de línea */
+            justify-content: center; /* Centrar los elementos horizontalmente */
+            gap: 30px; /* Espacio entre las imágenes */
+            margin-top: 30px;
+        }
+
+        .producto-card {
+            background-color: transparent; /* Fondo transparente para cada tarjeta */
+            border: none; /* Quitar el borde */
+            box-shadow: none; /* Quitar la sombra */
+            padding: 0; /* Quitar el padding */
+            color: #ffffff; /* Asegurar que el texto dentro de la tarjeta sea blanco */
+            width: 220px; /* Ancho fijo para las tarjetas (puedes ajustarlo) */
+            text-align: center;
+            display: flex; /* Usar flexbox para alinear contenido dentro de la tarjeta */
+            flex-direction: column; /* Apilar elementos verticalmente */
+            align-items: center; /* Centrar contenido horizontalmente */
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .producto-card:hover {
+            transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
+       
