@@ -1,0 +1,67 @@
+/* Estilos para el Fondo de Pantalla */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Color de texto base dentro del body (usaremos un color más oscuro) */
+    color: #222; 
+    text-align: center;
+    min-height: 100vh; 
+    
+    /* Propiedades clave para el Fondo de Imagen */
+    background-image: url('https://uploads.onecompiler.io/43vjzagjf/443w34fsp/3d.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Contenedor para hacer el contenido legible sobre el fondo */
+.content-wrapper {
+    /* Fondo semitransparente blanco para legibilidad */
+    background-color: rgba(255, 255, 255, 0.95); 
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Estilos de Tipografía y Separación */
+h1 {
+    /* Color más oscuro para el título principal */
+    color: #000080; /* Azul marino oscuro */
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+h2 {
+    /* Títulos de sección también en color oscuro para contraste */
+    color: #1a1a1a; 
+}
+h3 {
+    /* Gris muy oscuro para el subtítulo */
+    color: #333; 
+    margin-top: 0;
+}
+.intro-text {
+    /* Asegurar que el texto principal sea oscuro */
+    color: #222;
+    font-size: 1.1em;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #000080, rgba(0, 0, 0, 0));
+    margin: 20px 0;
+}
+
+
+/* Estilos para el listado de categorías (main-nav) */
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    jus
