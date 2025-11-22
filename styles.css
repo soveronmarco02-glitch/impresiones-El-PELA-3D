@@ -18,8 +18,7 @@ body {
 
 /* Contenedor para hacer el contenido legible sobre el fondo */
 .content-wrapper {
-    /* Fondo semitransparente blanco para legibilidad */
-    background-color: rgba(255, 255, 255, 0.95); 
+   background-color: rgba(255, 255, 255, 0.95); 
     max-width: 900px;
     margin: 40px auto;
     padding: 30px;
@@ -64,4 +63,54 @@ hr {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    jus
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.main-nav li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.main-nav li:hover {
+    transform: translateY(-5px);
+    background-color: #e9ecef;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav a {
+    display: block; 
+    padding: 15px 25px;
+    text-decoration: none; 
+    /* El color de los enlaces (botones) se mantiene en azul brillante para que destaquen */
+    color: #007bff; 
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Estilo para el mensaje de JavaScript */
+#mensaje-js {
+    margin-top: 20px;
+    padding: 10px;
+    /* Mantenemos colores contrastantes para la alerta de JS */
+    background-color: #fff3cd;
+    color: #856404; 
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+/* Estilos de Contacto */
+.contact-links a {
+    color: #28a745; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.contact-links a:hover {
+    color: #1e7e34;
+}  /* Fondo semitransparente blanco para legibilidad */
