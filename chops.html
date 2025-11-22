@@ -64,4 +64,87 @@
         
         .producto-card:hover {
             transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
-       
+        }
+
+        .producto-card img {
+            border-radius: 8px; /* Bordes redondeados para las imágenes */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar la imagen */
+            width: 200px; /* Asegura un ancho fijo para las imágenes */
+            height: 300px; /* Altura fija para las imágenes */
+            object-fit: cover; /* Recorta la imagen para que cubra el espacio sin distorsionarse */
+            margin-bottom: 10px;
+        }
+
+        .producto-card .nombre-producto,
+        .producto-card .precio {
+            color: #ffffff; /* Asegurar que el nombre y precio sean blancos */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra para mayor legibilidad */
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        
+        <header>
+            <h1>🍻 Chops y Vasos Ferneteros</h1>
+            <p><a href="index.html" class="back-link">⬅️ Volver a Categorías Principales</a></p>
+        </header>
+
+        <p class="intro-text">
+            ¡Personaliza tus brindis! Chops únicos y vasos ferneteros con el diseño que vos quieras.
+        </p>
+
+     
+
+        <div class="galeria-contenedor">
+
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/43ya9s4j7/jarra%20un%20pco%20de%20fernet.jpg" 
+                     alt="Jarra de Fernet personalizada">
+                <p class="nombre-producto">Jarra "Un poco de Fernet"</p>
+                <p class="precio">$15.000</p>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/43ya9s4j7/chosp%20x4.jpeg" 
+                     alt="Set de 4 Chops de colores">
+                <p class="nombre-producto"> Chops </p>
+                <p class="precio">$16.000</p>
+            </div>
+            
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/43ya9s4j7/impre%203.jpg" 
+                     alt="Jarra de vikingo 3D en color rosa">
+                <p class="nombre-producto">Jarra Vikingo (Decorativa / Chop)</p>
+                <p class="precio">$15.000</p>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/43ya9s4j7/impre4.jpg" 
+                     alt="Wirro 3D color rosa y azul">
+                <p class="nombre-producto">Vaso/Chop "Wirro"</p>
+                <p class="precio">$17.000</p>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/43ya9s4j7/bocajarra.jpeg" 
+                     alt="Jarra de Boca Juniors con escudo">
+                <p class="nombre-producto">chop de boca</p>
+                <p class="precio">$14.000</p>
+            </div>
+
+        </div>
+        
+        <p class="texto-general">¿Buscas un diseño especial para tu club o grupo musical? ¡Contactanos!</p>
+
+        <p class="texto-general">
+            <a href="https://wa.me/5491141915395" target="_blank" rel="noopener noreferrer">
+                ¡Pedir un chop personalizado por WhatsApp!
+            </a>
+        </p>
+    </div>
+    
+    </body>
