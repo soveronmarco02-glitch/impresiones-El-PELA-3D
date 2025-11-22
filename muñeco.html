@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muñecos articulados y figuras - pela3D</title>
+    <link rel="stylesheet" href="styles.css"> 
+    
+    <style>
+        /* Estilos ESPECÍFICOS para la página de Chops (Letras Blancas, Fondo Transparente) */
+        body {
+            color: #ffffff; 
+        }
+
+        .content-wrapper {
+            background-color: transparent; 
+            box-shadow: none;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .intro-text, .texto-general {
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .back-link {
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        /* ----- CAMBIOS PARA LAS TARJETAS DE PRODUCTO EN CHOP ----- */
+        .galeria-contenedor {
+            display: flex; /* Habilitar flexbox para poner elementos uno al lado del otro */
+            flex-wrap: wrap; /* Permitir que los elementos salten de línea */
+            justify-content: center; /* Centrar los elementos horizontalmente */
+            gap: 30px; /* Espacio entre las imágenes */
+            margin-top: 30px;
+        }
+
+        .producto-card {
+            background-color: transparent; /* Fondo transparente para cada tarjeta */
+            border: none; /* Quitar el borde */
+            box-shadow: none; /* Quitar la sombra */
+            padding: 0; /* Quitar el padding */
+            color: #ffffff; /* Asegurar que el texto dentro de la tarjeta sea blanco */
+            width: 220px; /* Ancho fijo para las tarjetas (puedes ajustarlo) */
+            text-align: center;
+            display: flex; /* Usar flexbox para alinear contenido dentro de la tarjeta */
+            flex-direction: column; /* Apilar elementos verticalmente */
+            align-items: center; /* Centrar contenido horizontalmente */
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .producto-card:hover {
+            transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
+        }
+
+        .producto-card img {
+            border-radius: 8px; /* Bordes redondeados para las imágenes */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar la imagen */
+            width: 200px; /* Asegura un ancho fijo para las imágenes */
+            height: 300px; /* Altura fija para las imágenes */
+            object-fit: cover; /* Recorta la imagen para que cubra el espacio sin distorsionarse */
+            margin-bottom: 10px;
+        }
+
+        .producto-card .nombre-producto,
+        .producto-card .precio {
+            color: #ffffff; /* Asegurar que el nombre y precio sean blancos */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra para mayor legibilidad */
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        
+        <header>
+            <h1>🤖 Muñecos Articulados y Figuras</h1>
+            <p><a href="index.html" class="back-link">⬅️ Volver a Categorías Principales</a></p>
+        </header>
+
+        <p class="intro-text">
+            Pedi tu muñeco Articulado o figuras que quieras en variedad de colores y tamaños !!
+        </p>
+
+     
+
+        <div class="galeria-contenedor">
+
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/apolla%20vaso.jpg" 
+                     alt="Jarra de Fernet personalizada">
+                <p class="nombre-producto">apoya vaso </p>
+                <p class="precio">$18.000</p>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dragon%20rosa%20y%20huevo.jpg" 
+                     alt="Set de 4 Chops de colores">
+                <p class="nombre-producto"> dragon y huevo rosa  </p>
+                <p class="precio">$10.000</p>
+            </div>
+            
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dragones.jpg" 
+                     alt="Jarra de vikingo 3D en color rosa">
+                <p class="nombre-producto">dragones</p>
+                <p class="precio">$8.000</p>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dummy%204%20brazos.jpg" 
+                     alt="Wirro 3D color rosa y azul">
+                <p class="nombre-producto">dummy 4 brazos </p>
+                <p class="precio">$8.000</p>
+            </div>
+
+            <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dummy%20deat%20pool.jpg" 
+                     alt="Jarra de Boca Juniors con escudo">
+                <p class="nombre-producto">dummy deatpool</p>
+                <p class="precio">$8.000</p>
+            </div>
+
+         <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dummy%20wolverine.jpg" 
+                     alt="Jarra de Boca Juniors con escudo">
+                <p class="nombre-producto">dummy wolverine </p>
+                <p class="precio">$8.000</p>
+            </div>
+
+         <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/mu%C3%B1ecos%202.jpg" 
+                     alt="Jarra de Boca Juniors con escudo">
+                <p class="nombre-producto">muñecos articulados </p>
+                <p class="precio">$6.000</p>
+            </div>
+
+        <div class="producto-card">
+                <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/mu%C3%B1ecos%20articulados.jpg" 
+                     alt="Jarra de Boca Juniors con escudo">
+                <p class="nombre-producto"> muñecos </p>
+                <p class="precio">$6.000</p>
+            </div>
+
+      
+       
+       
+        </div>
+        
+        <p class="texto-general">Pedinos el que mas te guste ¡Contactanos!</p>
+
+        <p class="texto-general">
+            <a href="https://wa.me/5491141915395" target="_blank" rel="noopener noreferrer">
+                ¡Pedir tu muñeco o figura por WhatsApp!
+            </a>
+        </p>
+    </div>
+    
+    </body>
+
+</html>
