@@ -1,117 +1,166 @@
-/* Estilos para el Fondo de Pantalla */
+/* ======================================================= */
+/* 🎨 Variables CSS Personalizadas (Mejora de Mantenimiento) */
+/* ======================================================= */
+:root {
+    /* Paleta de Colores */
+    --color-primary-dark: #000080; /* Azul Marino Oscuro */
+    --color-text-base: #222; /* Texto Principal */
+    --color-text-dark: #1a1a1a; /* Títulos de Sección */
+    --color-text-subtitle: #333; /* Subtítulos */
+    --color-link-primary: #007bff; /* Azul de Enlace/Botón */
+    --color-success: #28a745; /* Verde de Éxito/Contacto */
+
+    /* Fondo Semitransparente para Contenido */
+    --bg-content-wrapper: rgba(255, 255, 255, 0.95);
+    --shadow-content-wrapper: 0 0 20px rgba(0, 0, 0, 0.4);
+
+    /* Otros */
+    --border-radius-base: 8px;
+}
+
+
+/* ======================================================= */
+/* 🖥️ Estilos para el Fondo de Pantalla (Body) */
+/* ======================================================= */
 body {
+    /* Tipografía y Layout Base */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* Color de texto base dentro del body (usaremos un color más oscuro) */
-    color: #222; 
+    min-height: 100vh;
     text-align: center;
-    min-height: 100vh; 
-    
-    /* Propiedades clave para el Fondo de Imagen */
+
+    /* Color de Texto Base */
+    color: var(--color-text-base);
+
+    /* Propiedades Clave para el Fondo de Imagen */
     background-image: url('https://uploads.onecompiler.io/43vjzagjf/443w34fsp/3d.webp');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    background-size: cover; /* Ajusta la imagen para cubrir todo el body */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    background-position: center; /* Centra la imagen */
     background-repeat: no-repeat;
 }
 
-/* Contenedor para hacer el contenido legible sobre el fondo */
+
+/* ======================================================= */
+/* 📝 Contenedor de Contenido (Content Wrapper) */
+/* ======================================================= */
 .content-wrapper {
-    /* Fondo semitransparente blanco para legibilidad */
-    background-color: rgba(255, 255, 255, 0.95); 
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
+    /* Apariencia y Sombra */
+    background-color: var(--bg-content-wrapper);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-content-wrapper);
+
+    /* Espaciado y Centrado */
+    max-width: 900px;
+    margin: 40px auto; /* Centra horizontalmente */
+    padding: 30px;
 }
 
 
-/* Estilos de Tipografía y Separación */
+/* ======================================================= */
+/* 📖 Estilos de Tipografía */
+/* ======================================================= */
 h1 {
-    /* Color más oscuro para el título principal */
-    color: #000080; /* Azul marino oscuro */
-    font-size: 2.5em;
+    color: var(--color-primary-dark);
+    font-size: 2.5em; /* Unidad relativa para escalabilidad */
     margin-bottom: 5px;
 }
+
 h2 {
-    /* Títulos de sección también en color oscuro para contraste */
-    color: #1a1a1a; 
+    color: var(--color-text-dark);
 }
+
 h3 {
-    /* Gris muy oscuro para el subtítulo */
-    color: #333; 
+    color: var(--color-text-subtitle);
     margin-top: 0;
 }
+
 .intro-text {
-    /* Asegurar que el texto principal sea oscuro */
-    color: #222;
+    color: var(--color-text-base);
     font-size: 1.1em;
 }
 
 hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #000080, rgba(0, 0, 0, 0));
+    /* Usa la variable para el color primario en el degradado */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--color-primary-dark), rgba(0, 0, 0, 0));
     margin: 20px 0;
 }
 
 
-/* Estilos para el listado de categorías (main-nav) */
+/* ======================================================= */
+/* 🧭 Estilos para el Listado de Categorías (Main Nav) */
+/* ======================================================= */
 .main-nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 30px 0;
+
+    /* Flexbox para alinear y distribuir elementos */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    margin: 30px 0;
 }
 
 .main-nav li {
     background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: var(--border-radius-base);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* Transición suave para efectos hover */
     transition: all 0.3s ease;
 }
 
 .main-nav li:hover {
-    transform: translateY(-5px);
-    background-color: #e9ecef;
+    transform: translateY(-5px); /* Efecto de levantamiento */
+    background-color: #e9ecef; /* Un color de fondo más claro */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .main-nav a {
-    display: block; 
+    /* Enlace como bloque para ser un área de clic grande */
+    display: block;
     padding: 15px 25px;
-    text-decoration: none; 
-    /* El color de los enlaces (botones) se mantiene en azul brillante para que destaquen */
-    color: #007bff; 
+    text-decoration: none;
+    
+    /* Estilo del texto del enlace/botón */
+    color: var(--color-link-primary);
     font-weight: bold;
     font-size: 1.1em;
 }
 
-/* Estilo para el mensaje de JavaScript */
+
+/* ======================================================= */
+/* ⚠️ Estilo para el Mensaje de JavaScript (Alerta) */
+/* ======================================================= */
 #mensaje-js {
     margin-top: 20px;
     padding: 10px;
-    /* Mantenemos colores contrastantes para la alerta de JS */
+    
+    /* Colores para un estilo de 'alerta/aviso' */
     background-color: #fff3cd;
-    color: #856404; 
+    color: #856404;
     border: 1px solid #ffeeba;
     border-radius: 5px;
     font-style: italic;
 }
 
-/* Estilos de Contacto */
+
+/* ======================================================= */
+/* 📞 Estilos de Contacto */
+/* ======================================================= */
 .contact-links a {
-    color: #28a745; 
+    color: var(--color-success);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
+
 .contact-links a:hover {
+    /* Color más oscuro para el estado hover */
     color: #1e7e34;
 }
