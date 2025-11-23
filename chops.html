@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chops y Vasos Ferneteros - pela3D</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
         /* Estilos ESPECÍFICOS para la página de Chops (Letras Blancas, Fondo Transparente) */
@@ -34,7 +35,7 @@
         .back-link {
             color: #f0f0f0;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-            text-decoration: none; /* Asegurar que no tenga subrayado */
+            text-decoration: none; 
         }
         .back-link:hover {
             color: #ffffff;
@@ -50,7 +51,7 @@
         }
 
         .producto-card {
-            background-color: rgba(255, 255, 255, 0.1); /* Ligero fondo para el card */
+            background-color: rgba(255, 255, 255, 0.1); 
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             padding: 10px;
@@ -61,8 +62,8 @@
             flex-direction: column; 
             align-items: center; 
             transition: transform 0.2s ease-in-out;
-            min-height: 450px; /* Altura mínima para que los botones queden alineados */
-            justify-content: space-between; /* Distribuye el espacio entre los elementos */
+            min-height: 450px; 
+            justify-content: space-between; 
         }
         
         .producto-card:hover {
@@ -88,14 +89,14 @@
         
         /* Estilos para el botón AGREGAR */
         .add-to-cart {
-            background-color: #007bff; /* Azul primario */
+            background-color: #007bff; 
             color: white;
             border: none;
             padding: 8px 15px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
-            margin-top: auto; /* Empuja el botón al final del flex container */
+            margin-top: auto; 
             width: 90%;
             font-weight: bold;
         }
@@ -103,10 +104,10 @@
             background-color: #0056b3;
         }
 
-        /* Estilos para la sección del carrito */
+        /* Estilos para la sección del carrito (resumen) */
         #carrito-resumen {
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo claro para legibilidad */
-            color: #222; /* Texto oscuro */
+            background-color: rgba(255, 255, 255, 0.9); 
+            color: #222; 
             border: 1px dashed #007bff;
             border-radius: 10px;
             padding: 15px;
@@ -115,6 +116,22 @@
         #carrito-resumen ul {
             list-style: none;
             padding: 0;
+        }
+
+        /* ⭐️ NUEVO ESTILO: Botón de eliminar en el resumen ⭐️ */
+        .btn-eliminar-item {
+            background: none;
+            border: none;
+            color: #dc3545; /* Rojo para destacar la eliminación */
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 10px;
+            padding: 0 5px;
+            line-height: 1;
+        }
+        .btn-eliminar-item:hover {
+            color: #c82333;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -137,7 +154,7 @@
 
             <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/vaso%20equipo.jpg" 
-                     alt="Jarra de Fernet personalizada">
+                    alt="Jarra de Fernet personalizada">
                 <p class="nombre-producto">Jarra "equipos de futbol"</p>
                 <p class="precio">$15.000</p>
                 <button class="add-to-cart" data-nombre="Jarra equipos de futbol" data-precio="15000">
@@ -147,7 +164,7 @@
 
             <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/un%20poco%20de%20fernet.jpg" 
-                     alt="Set de 4 Chops de colores">
+                    alt="Set de 4 Chops de colores">
                 <p class="nombre-producto"> Chops un poco de fernet </p>
                 <p class="precio">$15.000</p>
                 <button class="add-to-cart" data-nombre="Chop un poco de fernet" data-precio="15000">
@@ -157,7 +174,7 @@
             
             <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/rosa.jpg" 
-                     alt="Jarra de vikingo 3D en color rosa">
+                    alt="Jarra de vikingo 3D en color rosa">
                 <p class="nombre-producto">un poco de chisme (rosa)</p>
                 <p class="precio">$15.000</p>
                 <button class="add-to-cart" data-nombre="Chop chisme (rosa)" data-precio="15000">
@@ -167,7 +184,7 @@
 
             <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/inde.jpg" 
-                     alt="Wirro 3D color rosa y azul">
+                    alt="Wirro 3D color rosa y azul">
                 <p class="nombre-producto">CHOP Y tabla de picada </p>
                 <p class="precio">$24.000</p>
                 <button class="add-to-cart" data-nombre="Chop y tabla de picada" data-precio="24000">
@@ -177,7 +194,7 @@
 
             <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/chop%20750.jpg" 
-                     alt="Jarra de Boca Juniors con escudo">
+                    alt="Jarra de Boca Juniors con escudo">
                 <p class="nombre-producto">chop blanco de 750</p>
                 <p class="precio">$20.000</p>
                 <button class="add-to-cart" data-nombre="Chop blanco 750ml" data-precio="20000">
@@ -187,7 +204,7 @@
 
             <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/boca.jpg" 
-                     alt="Jarra de Boca Juniors con escudo">
+                    alt="Jarra de Boca Juniors con escudo">
                 <p class="nombre-producto">CHOP BOCA</p>
                 <p class="precio">$15.000</p>
                 <button class="add-to-cart" data-nombre="Chop Boca Juniors" data-precio="15000">
@@ -197,7 +214,7 @@
 
             <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/boca%20y%20tabla.jpg" 
-                     alt="Jarra de Boca Juniors con escudo">
+                    alt="Jarra de Boca Juniors con escudo">
                 <p class="nombre-producto">tabla pica y chop de boca </p>
                 <p class="precio">$20.000</p>
                 <button class="add-to-cart" data-nombre="Tabla pica y chop Boca" data-precio="20000">
@@ -207,7 +224,7 @@
 
             <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/boca%20rosa.jpg" 
-                     alt="Jarra de Boca Juniors con escudo">
+                    alt="Jarra de Boca Juniors con escudo">
                 <p class="nombre-producto">chop boca (rosa) </p>
                 <p class="precio">$15.000</p>
                 <button class="add-to-cart" data-nombre="Chop Boca (rosa)" data-precio="15000">
@@ -217,7 +234,7 @@
 
             <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/argentina.jpg" 
-                     alt="Jarra de Boca Juniors con escudo">
+                    alt="Jarra de Boca Juniors con escudo">
                 <p class="nombre-producto">argentina </p>
                 <p class="precio">$15.000</p>
                 <button class="add-to-cart" data-nombre="Chop Argentina" data-precio="15000">
@@ -237,7 +254,7 @@
         <button id="finalizar-compra" style="
             margin-top: 20px;
             padding: 10px 30px;
-            background-color: #28a745; /* Color verde para WhatsApp */
+            background-color: #28a745; 
             color: white;
             border: none;
             border-radius: 5px;
