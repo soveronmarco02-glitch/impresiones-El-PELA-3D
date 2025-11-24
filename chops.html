@@ -41,28 +41,39 @@
             color: #ffffff;
         }
 
-        /* ----- ESTILOS DE LA GALERÍA (CHOP) ----- */
+        /* --------------------------------------------------
+         * ⭐ ESTILOS DE CUADRÍCULA 2 COLUMNAS (UNIFICADOS) ⭐
+         * -------------------------------------------------- */
+
         .galeria-contenedor {
             display: flex; 
             flex-wrap: wrap; 
             justify-content: center; 
-            gap: 30px; 
+            gap: 20px; /* Espacio entre tarjetas */
             margin-top: 30px;
+            padding: 0 10px;
         }
 
         .producto-card {
             background-color: rgba(255, 255, 255, 0.1); 
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            
+            /* FUERZA 2 COLUMNAS en todos los dispositivos */
+            /* 50% menos la mitad del gap (20px / 2 = 10px) */
+            flex-basis: calc(50% - 10px);
+            max-width: calc(50% - 10px);
+            flex-grow: 0; /* Evita que crezca más allá de su 50% */
+            
+            /* Estilos de contenido */
             padding: 10px;
             color: #ffffff; 
-            width: 220px; /* Ancho base para escritorio */
             text-align: center;
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             transition: transform 0.2s ease-in-out;
-            min-height: 450px; 
+            min-height: 450px; /* Altura base para escritorio */
             justify-content: space-between; 
         }
         
@@ -73,11 +84,23 @@
         .producto-card img {
             border-radius: 8px; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-            width: 200px; 
-            height: 300px; 
+            width: 100%; /* Ocupa todo el ancho de la tarjeta */
+            height: 250px; /* Altura uniforme */
             object-fit: cover; 
             margin-bottom: 10px;
         }
+
+        /* AJUSTE FINO para pantallas MUY pequeñas (móviles) */
+        @media (max-width: 480px) {
+            .producto-card {
+                min-height: 380px; 
+            }
+            .producto-card img {
+                height: 180px; 
+            }
+        }
+
+        /* ----- Estilos restantes (los mismos que antes) ----- */
 
         .producto-card .nombre-producto,
         .producto-card .precio {
@@ -104,25 +127,6 @@
             background-color: #0056b3;
         }
 
-        /* MEDIA QUERY PARA MÓVILES */
-        @media (max-width: 600px) {
-            /* Permite 2 columnas en móviles con un ancho flexible */
-            .galeria-contenedor {
-                gap: 15px; /* Reducir el espacio entre tarjetas */
-                padding: 0 5px;
-            }
-            .producto-card {
-                /* Calcular para que quepan dos tarjetas con margen */
-                width: calc(50% - 15px); 
-                min-height: 380px; /* Reducir altura mínima */
-                padding: 5px;
-            }
-            .producto-card img {
-                width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
-                height: 200px; /* Reducir la altura de la imagen */
-            }
-        }
-
         /* Estilos para la sección del carrito (resumen) */
         #carrito-resumen {
             background-color: rgba(255, 255, 255, 0.9); 
@@ -136,19 +140,12 @@
             list-style: none;
             padding: 0;
         }
-        #carrito-resumen li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5px 0;
-            border-bottom: 1px dotted #ccc;
-        }
 
-        /* ⭐️ ESTILO MEJORADO: Botón de eliminar en el resumen ⭐️ */
+        /* Botón de eliminar en el resumen */
         .btn-eliminar-item {
             background: none;
             border: none;
-            color: #dc3545; /* Rojo para destacar la eliminación */
+            color: #dc3545; 
             cursor: pointer;
             font-size: 1.2em;
             margin-left: 10px;
@@ -159,66 +156,6 @@
             color: #c82333;
             transform: scale(1.1);
         }
-        /* Estilo para el botón de WhatsApp (Finalizar Compra) */
-        #finalizar-compra:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            background-color: #6c757d !important;
-        }
-        /*
- * 1. Configuración de la Galería (Contenedor)
- * Usamos Flexbox para ordenar las tarjetas.
- */
-.galeria-contenedor {
-    /* Mantén la configuración Flexbox */
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    gap: 20px; /* Espacio entre las tarjetas */
-    margin-top: 30px;
-    padding: 0 10px; /* Pequeño padding lateral para móviles */
-}
-
-/*
- * 2. Configuración de la Tarjeta Individual
- */
-.producto-card {
-    /* ... (Mantén tus estilos de fondo, sombra, etc.) ... */
-    
-    /* Flex-basis define el ancho ideal, si hay espacio, caben más. */
-    flex-basis: 220px; 
-    
-    /* Permite que las tarjetas se adapten */
-    flex-grow: 1;    /* Permite que crezcan si hay mucho espacio */
-    flex-shrink: 1;  /* Permite que se encojan en pantallas pequeñas */
-    
-    max-width: 48%; /* Limita el ancho máximo para que nunca ocupe todo el ancho si hay espacio */
-    
-    min-height: 450px; 
-    /* ... (Mantén el resto de tus estilos de texto, padding, etc.) ... */
-}
-
-/*
- * 3. Media Query para Móviles Pequeños (Ejemplo: Teléfonos en vertical)
- * Asegura que se vean al menos 2 por fila si es posible, o 1 si es extremadamente estrecho.
- */
-@media (max-width: 600px) {
-    .producto-card {
-        /*
-         * Cálculo clave para dos columnas:
-         * 50% del ancho del contenedor, menos la mitad del gap (espacio)
-         */
-        width: calc(50% - 10px); 
-        flex-basis: calc(50% - 10px);
-        max-width: none; /* Elimina la restricción de ancho máximo en móvil */
-        min-height: 380px; /* Optimización de altura para pantalla pequeña */
-    }
-    
-    .producto-card img {
-        height: 200px; /* Reduce la altura de la imagen para ahorrar espacio vertical */
-    }
-}
-
     </style>
 </head>
 
@@ -334,7 +271,7 @@
 
         <h2>🛍️ Tu Carrito de Pedido</h2>
         <div id="carrito-resumen">
-            <p id="carrito-vacio-msg">El carrito está vacío.</p>
+            <p>El carrito está vacío.</p>
         </div>
         
         <button id="finalizar-compra" style="
@@ -350,7 +287,7 @@
         " disabled>
             Finalizar y Enviar Pedido por WhatsApp
         </button>
-        <div id="mensaje-js" style="margin-top: 30px; color: #fff;"></div>
+        <div id="mensaje-js" style="margin-top: 30px; color: #fff;">Agrega productos para hacer tu pedido.</div>
 
         <hr style="margin-top: 40px; margin-bottom: 40px;">
         
