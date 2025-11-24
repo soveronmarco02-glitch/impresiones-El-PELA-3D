@@ -165,6 +165,59 @@
             cursor: not-allowed;
             background-color: #6c757d !important;
         }
+        /*
+ * 1. Configuración de la Galería (Contenedor)
+ * Usamos Flexbox para ordenar las tarjetas.
+ */
+.galeria-contenedor {
+    /* Mantén la configuración Flexbox */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 30px;
+    padding: 0 10px; /* Pequeño padding lateral para móviles */
+}
+
+/*
+ * 2. Configuración de la Tarjeta Individual
+ */
+.producto-card {
+    /* ... (Mantén tus estilos de fondo, sombra, etc.) ... */
+    
+    /* Flex-basis define el ancho ideal, si hay espacio, caben más. */
+    flex-basis: 220px; 
+    
+    /* Permite que las tarjetas se adapten */
+    flex-grow: 1;    /* Permite que crezcan si hay mucho espacio */
+    flex-shrink: 1;  /* Permite que se encojan en pantallas pequeñas */
+    
+    max-width: 48%; /* Limita el ancho máximo para que nunca ocupe todo el ancho si hay espacio */
+    
+    min-height: 450px; 
+    /* ... (Mantén el resto de tus estilos de texto, padding, etc.) ... */
+}
+
+/*
+ * 3. Media Query para Móviles Pequeños (Ejemplo: Teléfonos en vertical)
+ * Asegura que se vean al menos 2 por fila si es posible, o 1 si es extremadamente estrecho.
+ */
+@media (max-width: 600px) {
+    .producto-card {
+        /*
+         * Cálculo clave para dos columnas:
+         * 50% del ancho del contenedor, menos la mitad del gap (espacio)
+         */
+        width: calc(50% - 10px); 
+        flex-basis: calc(50% - 10px);
+        max-width: none; /* Elimina la restricción de ancho máximo en móvil */
+        min-height: 380px; /* Optimización de altura para pantalla pequeña */
+    }
+    
+    .producto-card img {
+        height: 200px; /* Reduce la altura de la imagen para ahorrar espacio vertical */
+    }
+}
     </style>
 </head>
 
