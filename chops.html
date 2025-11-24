@@ -41,7 +41,7 @@
             color: #ffffff;
         }
 
-        /* ----- CAMBIOS PARA LAS TARJETAS DE PRODUCTO EN CHOP ----- */
+        /* ----- ESTILOS DE LA GALERÍA (CHOP) ----- */
         .galeria-contenedor {
             display: flex; 
             flex-wrap: wrap; 
@@ -56,7 +56,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             padding: 10px;
             color: #ffffff; 
-            width: 220px; 
+            width: 220px; /* Ancho base para escritorio */
             text-align: center;
             display: flex; 
             flex-direction: column; 
@@ -104,6 +104,25 @@
             background-color: #0056b3;
         }
 
+        /* MEDIA QUERY PARA MÓVILES */
+        @media (max-width: 600px) {
+            /* Permite 2 columnas en móviles con un ancho flexible */
+            .galeria-contenedor {
+                gap: 15px; /* Reducir el espacio entre tarjetas */
+                padding: 0 5px;
+            }
+            .producto-card {
+                /* Calcular para que quepan dos tarjetas con margen */
+                width: calc(50% - 15px); 
+                min-height: 380px; /* Reducir altura mínima */
+                padding: 5px;
+            }
+            .producto-card img {
+                width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+                height: 200px; /* Reducir la altura de la imagen */
+            }
+        }
+
         /* Estilos para la sección del carrito (resumen) */
         #carrito-resumen {
             background-color: rgba(255, 255, 255, 0.9); 
@@ -117,8 +136,15 @@
             list-style: none;
             padding: 0;
         }
+        #carrito-resumen li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px dotted #ccc;
+        }
 
-        /* ⭐️ NUEVO ESTILO: Botón de eliminar en el resumen ⭐️ */
+        /* ⭐️ ESTILO MEJORADO: Botón de eliminar en el resumen ⭐️ */
         .btn-eliminar-item {
             background: none;
             border: none;
@@ -132,6 +158,12 @@
         .btn-eliminar-item:hover {
             color: #c82333;
             transform: scale(1.1);
+        }
+        /* Estilo para el botón de WhatsApp (Finalizar Compra) */
+        #finalizar-compra:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background-color: #6c757d !important;
         }
     </style>
 </head>
@@ -248,7 +280,7 @@
 
         <h2>🛍️ Tu Carrito de Pedido</h2>
         <div id="carrito-resumen">
-            <p>El carrito está vacío.</p>
+            <p id="carrito-vacio-msg">El carrito está vacío.</p>
         </div>
         
         <button id="finalizar-compra" style="
@@ -264,7 +296,7 @@
         " disabled>
             Finalizar y Enviar Pedido por WhatsApp
         </button>
-        <div id="mensaje-js" style="margin-top: 30px; color: #fff;">Agrega productos para hacer tu pedido.</div>
+        <div id="mensaje-js" style="margin-top: 30px; color: #fff;"></div>
 
         <hr style="margin-top: 40px; margin-bottom: 40px;">
         
