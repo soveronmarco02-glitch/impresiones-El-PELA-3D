@@ -19,7 +19,7 @@
             box-shadow: none;
             padding: 20px;
             margin: 20px auto;
-            max-width: 900px;
+            max-width: 900px; /* Mantener para pantallas grandes */
         }
 
         h1, h2, h3 {
@@ -42,16 +42,15 @@
         }
 
         /* --------------------------------------------------
-         * ⭐ ESTILOS DE CUADRÍCULA 2 COLUMNAS (UNIFICADOS) ⭐
+         * ⭐ ESTILOS PRINCIPALES DE LA GALERÍA (PARA PC Y TABLETS) ⭐
          * -------------------------------------------------- */
-
         .galeria-contenedor {
             display: flex; 
             flex-wrap: wrap; 
             justify-content: center; 
             gap: 20px; /* Espacio entre tarjetas */
             margin-top: 30px;
-            padding: 0 10px;
+            padding: 0 10px; /* Pequeño padding lateral */
         }
 
         .producto-card {
@@ -59,13 +58,12 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             
-            /* FUERZA 2 COLUMNAS en todos los dispositivos */
-            /* 50% menos la mitad del gap (20px / 2 = 10px) */
-            flex-basis: calc(50% - 10px);
-            max-width: calc(50% - 10px);
-            flex-grow: 0; /* Evita que crezca más allá de su 50% */
+            /* Para pantallas grandes, intentar 3 o 4 por fila, o 2 si el espacio es menor a 900px */
+            flex-basis: 260px; /* Ancho ideal de cada tarjeta */
+            max-width: 280px; /* Ancho máximo para que no se estiren demasiado */
+            flex-grow: 1;    /* Permite que crezcan para llenar el espacio */
+            flex-shrink: 1;  /* Permite que se encojan si no hay espacio */
             
-            /* Estilos de contenido */
             padding: 10px;
             color: #ffffff; 
             text-align: center;
@@ -73,7 +71,7 @@
             flex-direction: column; 
             align-items: center; 
             transition: transform 0.2s ease-in-out;
-            min-height: 450px; /* Altura base para escritorio */
+            min-height: 480px; /* Altura generosa para escritorio */
             justify-content: space-between; 
         }
         
@@ -85,49 +83,78 @@
             border-radius: 8px; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
             width: 100%; /* Ocupa todo el ancho de la tarjeta */
-            height: 250px; /* Altura uniforme */
-            object-fit: cover; 
+            height: 300px; /* Altura fija para escritorio */
+            object-fit: cover; /* Asegura que la imagen se ajuste bien */
             margin-bottom: 10px;
         }
 
-        /* AJUSTE FINO para pantallas MUY pequeñas (móviles) */
-        @media (max-width: 480px) {
+        /* -------------------------------------------
+         * ⭐ MEDIA QUERY ESPECÍFICA PARA MÓVILES (HASTA 768px) ⭐
+         * Aquí forzamos 2 columnas y optimizamos imágenes/altura.
+         * -------------------------------------------
+         */
+        @media (max-width: 768px) { /* Esto afectará a celulares y tablets pequeñas */
+            .content-wrapper {
+                margin: 10px; /* Reduce el margen en móvil */
+                padding: 10px; /* Reduce el padding */
+                max-width: 100%; /* Permite que ocupe todo el ancho disponible */
+            }
+
+            .galeria-contenedor {
+                gap: 15px; /* Reduce el espacio entre tarjetas para móviles */
+                padding: 0; /* Elimina el padding lateral extra */
+            }
+
             .producto-card {
-                min-height: 380px; 
+                /*
+                 * Cálculo para 2 columnas: 50% del ancho, menos la mitad del gap.
+                 * Si el gap es 15px, restamos 7.5px.
+                 */
+                flex-basis: calc(50% - 7.5px);
+                max-width: calc(50% - 7.5px); /* Crucial para asegurar 2 por fila */
+                flex-grow: 0; /* No permite que crezca si el espacio no es perfecto */
+                min-height: 360px; /* Altura más corta para pantallas pequeñas */
+                padding: 5px; /* Padding interno más pequeño */
             }
+            
             .producto-card img {
-                height: 180px; 
+                height: 180px; /* Altura más corta para la imagen en móvil */
+                margin-bottom: 5px; /* Menos margen inferior */
             }
-        }
-
-        /* ----- Estilos restantes (los mismos que antes) ----- */
-
-        .producto-card .nombre-producto,
-        .producto-card .precio {
-            color: #ffffff; 
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); 
-            margin: 5px 0;
-            font-size: 1.1em;
+            
+            /* Ajustes de texto para móvil */
+            .producto-card .nombre-producto {
+                font-size: 1em;
+            }
+            .producto-card .precio {
+                font-size: 1em;
+            }
+            .add-to-cart {
+                padding: 6px 10px;
+                font-size: 0.9em;
+            }
         }
         
-        /* Estilos para el botón AGREGAR */
-        .add-to-cart {
-            background-color: #007bff; 
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: auto; 
-            width: 90%;
-            font-weight: bold;
-        }
-        .add-to-cart:hover {
-            background-color: #0056b3;
+        /* -------------------------------------------
+         * ⭐ MEDIA QUERY PARA PANTALLAS MUY PEQUEÑAS (EJ: iPhone SE, hasta 360px) ⭐
+         * Si quieres que siga siendo de 2 columnas, estos ajustes ayudan.
+         * Si quieres 1 columna aquí, cambiarías flex-basis a 100%
+         * -------------------------------------------
+         */
+        @media (max-width: 360px) {
+            .producto-card {
+                flex-basis: calc(50% - 5px); /* Ajuste más fino del gap para 2 columnas */
+                max-width: calc(50% - 5px);
+                min-height: 320px; /* Puede ser necesario acortar más */
+                gap: 10px;
+            }
+            .producto-card img {
+                height: 150px;
+            }
         }
 
-        /* Estilos para la sección del carrito (resumen) */
+
+        /* ----- Estilos para la sección del carrito (resumen) ----- */
         #carrito-resumen {
             background-color: rgba(255, 255, 255, 0.9); 
             color: #222; 
@@ -139,6 +166,13 @@
         #carrito-resumen ul {
             list-style: none;
             padding: 0;
+        }
+        #carrito-resumen li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px dotted #ccc;
         }
 
         /* Botón de eliminar en el resumen */
@@ -155,6 +189,12 @@
         .btn-eliminar-item:hover {
             color: #c82333;
             transform: scale(1.1);
+        }
+        /* Estilo para el botón de WhatsApp (Finalizar Compra) */
+        #finalizar-compra:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background-color: #6c757d !important;
         }
     </style>
 </head>
