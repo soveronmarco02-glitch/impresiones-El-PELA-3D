@@ -218,77 +218,7 @@
         height: 200px; /* Reduce la altura de la imagen para ahorrar espacio vertical */
     }
 }
-        /*
- * 1. Configuración de la Galería (Contenedor) - Base para todos los dispositivos
- */
-.galeria-contenedor {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; /* Centra las filas de tarjetas */
-    gap: 15px; /* Espacio entre las tarjetas (más pequeño para móviles) */
-    margin-top: 30px;
-    padding: 0 5px; /* Pequeño margen para que no toque los bordes del celular */
-}
 
-/*
- * 2. Configuración de la Tarjeta Individual - Se adapta automáticamente
- */
-.producto-card {
-    background-color: rgba(255, 255, 255, 0.1); 
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 10px;
-    color: #ffffff; 
-    
-    /* Permite que crezcan y encojan */
-    flex-grow: 1;    
-    flex-shrink: 1;  
-    
-    /* Ancho ideal para escritorio: 3 o 4 por fila */
-    flex-basis: 220px; 
-    max-width: 250px; 
-    
-    text-align: center;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    transition: transform 0.2s ease-in-out;
-    min-height: 420px; /* Un poco más corto para móviles */
-    justify-content: space-between; 
-}
-
-.producto-card img {
-    border-radius: 8px; 
-    width: 100%; /* Ocupa todo el ancho de la tarjeta */
-    height: 250px; /* Altura fija para mantener el diseño uniforme */
-    object-fit: cover; 
-    margin-bottom: 10px;
-}
-
-
-/* -------------------------------------------
- * ⭐️ Media Query CLAVE para Móviles (Hasta 600px) ⭐️
- * Esto fuerza la cuadrícula de 2 columnas.
- * -------------------------------------------
- */
-@media (max-width: 600px) {
-    .producto-card {
-        /*
-         * Fórmula para 2 columnas con un gap de 15px:
-         * Ancho Total (100%) / 2 columnas = 50%
-         * Quitar la mitad del espacio de gap: 15px / 2 = 7.5px
-         * Resultado: 50% - 7.5px
-         */
-        flex-basis: calc(50% - 7.5px);
-        max-width: calc(50% - 7.5px); /* Asegura que no se expanda de más */
-        min-height: 350px; /* Más corto aún para ahorrar espacio vertical */
-        padding: 5px;
-    }
-    
-    .producto-card img {
-        height: 150px; /* Imágen más pequeña en vista móvil */
-    }
-}
     </style>
 </head>
 
