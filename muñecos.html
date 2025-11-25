@@ -4,27 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chops y Vasos Ferneteros - pela3D</title>
+    <title>Muñecos Articulados y Figuras - pela3D</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-     
-      <style>
-      /* Estilos ESPECÍFICOS para la página de Muñecos (Letras Blancas, Fondo Transparente) */
+    <style>
+        /* Estilos ESPECÍFICOS para la página de Muñecos (Letras Blancas, Fondo Transparente) */
         body {
-            color: #ffffff; 
+            color: #ffffff;
         }
 
         .content-wrapper {
-            background-color: transparent; 
+            background-color: transparent;
             box-shadow: none;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 900px;
+            padding: 10px; /* Reducido */
+            margin: 10px auto; /* Reducido */
+            max-width: 600px; /* Reducido para centrar mejor el contenido en pantallas medianas */
         }
 
         h1, h2, h3 {
-            color: #ffffff; 
+            color: #ffffff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         
@@ -36,70 +35,88 @@
         .back-link {
             color: #f0f0f0;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-            text-decoration: none; 
+            text-decoration: none;
         }
         .back-link:hover {
             color: #ffffff;
         }
 
-        /* ----- CAMBIOS PARA LAS TARJETAS DE PRODUCTO EN CHOP ----- */
+        /* ----- ESTILOS DE GALERÍA PREDETERMINADOS (ESCRITORIO/TABLET GRANDE) ----- */
         .galeria-contenedor {
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 30px; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Espacio entre tarjetas */
             margin-top: 30px;
+            padding: 0 10px;
         }
 
         .producto-card {
-            background-color: rgba(255, 255, 255, 0.1); 
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            padding: 10px;
-            color: #ffffff; 
-            width: 220px; 
+
+            /* Ajuste de Flexbox para escritorio (permite más de 2 columnas) */
+            flex-basis: 180px; /* Ancho ideal de cada tarjeta */
+            max-width: 200px; /* Ancho máximo para que no se estiren demasiado */
+            flex-grow: 1;
+            flex-shrink: 1;
+
+            padding: 8px; /* Padding interno reducido */
+            color: #ffffff;
             text-align: center;
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             transition: transform 0.2s ease-in-out;
-            min-height: 450px; 
-            justify-content: space-between; 
+            min-height: 380px; /* Altura generosa para escritorio */
+            justify-content: space-between;
         }
         
         .producto-card:hover {
-            transform: translateY(-5px); 
+            transform: translateY(-5px);
         }
 
         .producto-card img {
-            border-radius: 8px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-            width: 200px; 
-            height: 300px; 
-            object-fit: cover; 
-            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            width: 100%; /* Ocupa todo el ancho de la tarjeta */
+            height: 250px; /* ALTURA GRANDE PARA ESCRITORIO */
+            object-fit: cover;
+            margin-bottom: 8px;
         }
 
-        .producto-card .nombre-producto,
-        .producto-card .precio {
-            color: #ffffff; 
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); 
+        .producto-card .nombre-producto {
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
             margin: 5px 0;
-            font-size: 1.1em;
+            font-size: 0.95em; /* Fuente ligeramente más pequeña */
+            flex-grow: 1; /* Permite que el nombre ocupe el espacio necesario */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .producto-card .precio {
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            margin: 5px 0;
+            font-size: 1em;
+            font-weight: bold;
         }
         
         /* Estilos para el botón AGREGAR */
         .add-to-cart {
-            background-color: #007bff; 
+            background-color: #007bff;
             color: white;
             border: none;
-            padding: 8px 15px;
+            padding: 6px 10px; /* Padding reducido */
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
-            margin-top: auto; 
+            margin-top: auto;
             width: 90%;
             font-weight: bold;
+            font-size: 0.9em; /* Fuente más pequeña */
         }
         .add-to-cart:hover {
             background-color: #0056b3;
@@ -107,8 +124,8 @@
 
         /* Estilos para la sección del carrito (resumen) */
         #carrito-resumen {
-            background-color: rgba(255, 255, 255, 0.9); 
-            color: #222; 
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #222;
             border: 1px dashed #007bff;
             border-radius: 10px;
             padding: 15px;
@@ -119,8 +136,8 @@
             padding: 0;
         }
 
-        /* ⭐️ NUEVO ESTILO: Botón de eliminar en el resumen ⭐️ */
-        .btn-eliminar-item {
+        /* Botón de eliminar en el resumen */
+        .remove-item { /* Cambiado de btn-eliminar-item a remove-item para coincidir con JS */
             background: none;
             border: none;
             color: #dc3545; /* Rojo para destacar la eliminación */
@@ -130,9 +147,112 @@
             padding: 0 5px;
             line-height: 1;
         }
-        .btn-eliminar-item:hover {
+        .remove-item:hover {
             color: #c82333;
             transform: scale(1.1);
+        }
+
+        /* Estilos para el botón de finalizar compra */
+        #finalizar-compra {
+            margin-top: 20px;
+            padding: 10px 20px; /* Padding ajustado */
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em; /* Fuente ligeramente más pequeña */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #finalizar-compra:hover {
+            background-color: #218838;
+        }
+        #finalizar-compra:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        #mensaje-js {
+            margin-top: 20px;
+            color: #ffffff; /* Mantiene el color blanco para este mensaje */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            padding: 8px 15px;
+            background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente oscuro */
+            border-radius: 5px;
+            display: inline-block; /* Ajusta el ancho al contenido */
+        }
+
+
+        /* --------------------------------------------------
+         * 📱 MEDIA QUERY CLAVE PARA DISPOSITIVOS MÓVILES (MÁX. 768PX) 📱
+         * ESTO FUERZA LA CUADRÍCULA DE 2 COLUMNAS Y REDUCE LAS IMÁGENES.
+         * -------------------------------------------------- */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                margin: 0; 
+                padding: 10px; 
+                border-radius: 0; 
+                max-width: 100%; 
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 0;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            .intro-text {
+                font-size: 1em;
+            }
+
+            .galeria-contenedor {
+                gap: 10px; /* Espacio más pequeño entre tarjetas */
+                padding: 0 5px;
+            }
+
+            .producto-card {
+                /* ⭐⭐ CAMBIO CLAVE PARA DOS COLUMNAS PEQUEÑAS ⭐⭐ */
+                flex-basis: calc(50% - 10px); 
+                max-width: calc(50% - 10px); 
+                flex-grow: 0; 
+                min-height: 290px; /* Altura más compacta para la tarjeta */
+                padding: 5px; /* Padding interno más pequeño */
+            }
+
+            .producto-card img {
+                width: 100%; 
+                height: 160px; /* ⭐⭐ ALTURA DE IMAGEN MÁS CHICA ⭐⭐ */
+                margin-bottom: 5px;
+            }
+
+            .producto-card .nombre-producto {
+                font-size: 0.8em; 
+                margin: 3px 0;
+            }
+            .producto-card .precio {
+                font-size: 0.9em; 
+                margin: 3px 0;
+            }
+            .add-to-cart {
+                padding: 5px 8px; /* Botón "Agregar" más compacto */
+                font-size: 0.8em;
+            }
+
+            #carrito-resumen {
+                padding: 10px;
+            }
+            #carrito-resumen li {
+                font-size: 0.9em;
+            }
+            #carrito-resumen p {
+                font-size: 1em;
+            }
+
+            #finalizar-compra {
+                padding: 8px 15px;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -145,7 +265,6 @@
                 <h1>🤖 Muñecos Articulados y Figuras</h1>
                 <div style="display: flex; align-items: center;">
                     <p style="margin-right: 20px;"><a href="index.html" class="back-link">⬅️ Volver a Categorías Principales</a></p>
-                 
                 </div>
             </div>
         </header>
@@ -158,120 +277,111 @@
 
         <div class="galeria-contenedor">
 
-            <div class="producto-card" data-nombre="Apoya Vaso Pokémon" data-precio="18000">
+            <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/apolla%20vaso.jpg"
                     alt="Apoya vaso de Pokémon">
                 <p class="nombre-producto">Apoya Vaso Pokémon</p>
                 <p class="precio">$18.000</p>
-                  <button class="add-to-cart" data-nombre="apoya vaso de Pokémon" data-precio="18000">
+                <button class="add-to-cart" data-nombre="apoya vaso de Pokémon" data-precio="18000">
                     Agregar al Carrito
                 </button>
             </div>
 
-            <div class="producto-card" data-nombre="Dragón y Huevo Rosa" data-precio="10000">
+            <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dragon%20rosa%20y%20huevo.jpg"
                     alt="Dragón y huevo rosa">
                 <p class="nombre-producto">Dragón y Huevo Rosa</p>
                 <p class="precio">$10.000</p>
-                  <button class="add-to-cart" data-nombre="dragon y huevo rosa" data-precio="10000">
+                <button class="add-to-cart" data-nombre="dragon y huevo rosa" data-precio="10000">
                     Agregar al Carrito
                 </button>
             </div>
 
-            <div class="producto-card" data-nombre="Dragones Varios" data-precio="8000">
+            <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dragones.jpg"
                     alt="Dragones">
                 <p class="nombre-producto">Dragones</p>
                 <p class="precio">$8.000</p>
-                  <button class="add-to-cart" data-nombre="dragones" data-precio="8000">
+                <button class="add-to-cart" data-nombre="dragones" data-precio="8000">
                     Agregar al Carrito
                 </button>
             </div>
 
-            <div class="producto-card" data-nombre="Dummy 4 Brazos" data-precio="8000">
+            <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dummy%204%20brazos.jpg"
                     alt="Dummy 4 brazos">
                 <p class="nombre-producto">Dummy 4 Brazos</p>
                 <p class="precio">$8.000</p>
-                   <button class="add-to-cart" data-nombre="dummy 4 brazos" data-precio="8000">
+                <button class="add-to-cart" data-nombre="dummy 4 brazos" data-precio="8000">
                     Agregar al Carrito
                 </button>
             </div>
 
-            <div class="producto-card" data-nombre="Dummy Deadpool" data-precio="8000">
+            <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dummy%20deat%20pool.jpg"
                     alt="Dummy Deadpool">
                 <p class="nombre-producto">Dummy Deadpool</p>
                 <p class="precio">$8.000</p>
-                  <button class="add-to-cart" data-nombre="dummy Deadpool" data-precio="8000">
+                <button class="add-to-cart" data-nombre="dummy Deadpool" data-precio="8000">
                     Agregar al Carrito
                 </button>
             </div>
 
-            <div class="producto-card" data-nombre="Dummy Wolverine" data-precio="8000">
+            <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/dummy%20wolverine.jpg"
                     alt="Dummy Wolverine">
                 <p class="nombre-producto">Dummy Wolverine</p>
                 <p class="precio">$8.000</p>
-                   <button class="add-to-cart" data-nombre="dummy Wolverine" data-precio="8000">
+                <button class="add-to-cart" data-nombre="dummy Wolverine" data-precio="8000">
                     Agregar al Carrito
                 </button>
             </div>
 
-            <div class="producto-card" data-nombre="Muñeco Articulado B" data-precio="6000">
+            <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/mu%C3%B1ecos%202.jpg"
                     alt="Muñecos articulados">
                 <p class="nombre-producto">Muñeco Articulado </p>
                 <p class="precio">$6.000</p>
-                   <button class="add-to-cart" data-nombre="muñecos Articulado" data-precio="6000">
+                <button class="add-to-cart" data-nombre="muñecos Articulado" data-precio="6000">
                     Agregar al Carrito
                 </button>
             </div>
 
-            <div class="producto-card" data-nombre="Muñeco Articulado A" data-precio="6000">
+            <div class="producto-card">
                 <img src="https://uploads.onecompiler.io/43vjzagjf/443w4h3an/mu%C3%B1ecos%20articulados.jpg"
                     alt="Muñecos">
                 <p class="nombre-producto">Muñeco Articulado A</p>
                 <p class="precio">$6.000</p>
-                   <button class="add-to-cart" data-nombre="muñeco Articulado a" data-precio="6000">
+                <button class="add-to-cart" data-nombre="muñeco Articulado a" data-precio="6000">
                     Agregar al Carrito
                 </button>
             </div>
             
-      
-    <hr style="margin-top: 40px; margin-bottom: 40px;">
+        </div>
+        
+        <hr style="margin-top: 40px; margin-bottom: 40px;">
 
         <h2>🛍️ Tu Carrito de Pedido</h2>
         <div id="carrito-resumen">
             <p>El carrito está vacío.</p>
         </div>
         
-        <button id="finalizar-compra" style="
-            margin-top: 20px;
-            padding: 10px 30px;
-            background-color: #28a745; 
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        " disabled>
+        <button id="finalizar-compra" disabled>
             Finalizar y Enviar Pedido por WhatsApp
         </button>
-        <div id="mensaje-js" style="margin-top: 30px; color: #fff;">Agrega productos para hacer tu pedido.</div>
+        <div id="mensaje-js" style="margin-top: 30px;">Agrega productos para hacer tu pedido.</div>
 
         <hr style="margin-top: 40px; margin-bottom: 40px;">
         
-        <p class="texto-general">pedi el que mas te guste  ¡Contactanos!</p>
+        <p class="texto-general">pedi el que mas te guste ¡Contactanos!</p>
 
         <p class="texto-general">
             <a href="https://wa.me/5491141915395" target="_blank" rel="noopener noreferrer">
-                ¡Pedi tu muñeco o figura  por WhatsApp!
+                ¡Pedi tu muñeco o figura por WhatsApp!
             </a>
         </p>
     </div>
-    <script src="script1.js"></script>
+    <script src="script1.js"></script> 
 </body>
 
 </html>
